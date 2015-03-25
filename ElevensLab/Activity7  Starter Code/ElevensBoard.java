@@ -143,6 +143,13 @@ public class ElevensBoard {
 		}
 		return selected;
 	}
+	public static void printCards(ElevensBoard board) {
+         List<Integer> cIndexes = board.cardIndexes();
+         for( int index : cIndexes)
+         {
+             System.out.println(this.cards[index]);
+            }
+    }
 
 	/**
 	 * Generates and returns a string representation of this board.

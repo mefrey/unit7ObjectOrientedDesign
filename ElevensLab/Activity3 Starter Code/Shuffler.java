@@ -40,7 +40,7 @@ public class Shuffler {
             }
             System.out.println();
         }
-        System.out.println();
+        System.out.println(Shuffler.flip());
     }
 
 
@@ -79,7 +79,7 @@ public class Shuffler {
      */
     public static void selectionShuffle(int[] values) {
         Random rand = new Random();
-        for( int k = values.length-1; k > 0; k--)
+        for( int k = values.length-1; k >= 0; k--)
         {
             if( k == 0)
             {
@@ -97,4 +97,38 @@ public class Shuffler {
             }
           }
         }
+
+    public static String flip()
+    {
+        Random rand = new Random();
+        if( rand.nextInt(3) >0)
+        {
+            return "heads";
+        }
+        else
+        {
+            return "tails";
+        }
+    }
+
+    public static boolean arePermutations(int[] array1, int[] array2)
+    {
+        int duplicates = 0;
+        for( int i = 0; i < array1.length; i++)
+        {
+            for( int j = 0; j < array2.length; j++)
+            {
+                if( array1[i] == array2[j] && i != j )
+                {
+                    duplicates++;
+                }
+            }
+        }
+        if( duplicates == array1.length )
+            return true;
+        else
+            return false;
+    }
+
+
 }
